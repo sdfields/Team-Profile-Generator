@@ -48,12 +48,14 @@ const subjectInfo = [
     
 // }
 
+// Should I write an HTML file and have the contents transcribed from index.html to myteam.html and append the users info?
+
 // Function to initialize app
 function init() {
     inquirer
     .prompt(subjectInfo)
     .then((answers) =>
-      fs.writeFile(`teamprofile.html`, generateHTML(answers), (error) => {
+      fs.writeFile(`myteam.html`, generateHTML(answers), (error) => {
            return error 
           ? console.error(error)
           : console.log(`Team Profile uploaded successfully!`)
