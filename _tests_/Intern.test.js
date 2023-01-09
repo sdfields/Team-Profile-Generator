@@ -5,7 +5,12 @@ const testIntern = new Intern("Joe", "123", "Joe@gmail.com", "University of Scho
 
 // Testing Intern Object
 
-
+test("Testing if the correct values are received for Intern class object.", function() {
+    expect(testIntern.name).toBe("Joe");
+    expect(testIntern.id).toBe("123");
+    expect(testIntern.email).toBe("Joe@gmail.com");
+    expect(testIntern.school).toBe("University of School");
+});
 
 // Testing Intern Functions
 

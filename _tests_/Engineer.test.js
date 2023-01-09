@@ -3,9 +3,14 @@
 const Engineer = require("../lib/Engineer");
 const testEngineer = new Engineer("Joe", "123", "Joe@gmail.com", "github.com/Joe");
 
-// Testing Engineer Object
+// Testing Engineer Class Object
 
-
+test("Testing if the correct values are received for Engineer class object.", function() {
+    expect(testEngineer.name).toBe("Joe");
+    expect(testEngineer.id).toBe("123");
+    expect(testEngineer.email).toBe("Joe@gmail.com");
+    expect(testEngineer.gitHub).toBe("github.com/Joe");
+});
 
 // Testing Engineer Functions
 

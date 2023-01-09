@@ -5,7 +5,12 @@ const testManager = new Manager("Joe", "123", "Joe@gmail.com", "007");
 
 // Testing Manager Object
 
-
+test("Testing if the correct values are received for Manager class object.", function() {
+    expect(testManager.name).toBe("Joe");
+    expect(testManager.id).toBe("123");
+    expect(testManager.email).toBe("Joe@gmail.com");
+    expect(testManager.officeNumber).toBe("007");
+});
 
 // Testing Manager Functions
 
