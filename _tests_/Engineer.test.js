@@ -1,5 +1,13 @@
+// Importing Engineer from Library
+
 const Engineer = require("../lib/Engineer");
 const testEngineer = new Engineer("Joe", "123", "Joe@gmail.com", "github.com/Joe");
+
+// Testing Engineer Object
+
+
+
+// Testing Engineer Functions
 
 test("testing that getName returns the name of the user.", function () {
     expect(testEngineer.getName()).toBe("Joe");
