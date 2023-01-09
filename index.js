@@ -16,8 +16,9 @@ const teamMembersData = [];
 
 // Array of questions for user input
 
-const query = async () => {
-  const answers = await inquirer.prompt([
+console.log("Hello, please insert the information as you are prompted.");
+ 
+const questions = [
     {
       name: `name`,
       message: `Please insert your name.`,
@@ -39,42 +40,51 @@ const query = async () => {
       type: `list`,
       choices: [`Engineer`, `Intern`, `Manager`],
     },
-  ]);
-  
-  // If Engineer is selected ask for GitHub
 
-  if (answers.role === Engineer) {
-    inquirer.prompt([
-      {
-        name: `gitHub`,
-        message: `Please insert your GitHub.`,
-        type: `input`,
-      },
-    ]);
-  };
-};
+    // If Engineer is selected ask for GitHub profile.
 
-//     {
-//         name: `school`,
-//         message: `Please insert the name of your school.`,
-//         type: `input`,
-//     },
-//     {
-//         name: `officeNumber`,
-//         message: `Please insert your office number.`,
-//         type: `input`,
-//     },
-// ];
+    {
+      name: `gitHub`,
+      message: `Please insert your GitHub.`,
+      type: `input`,
+      when: (answers) => {
+        if(answers.role === `Engineer`) {
+          return true;
+        };
+      }
+    },
 
-// If Engineer is selected ask for GitHub
+    // If Intern is selected ask for school.
 
-// If Intern is selected ask for school
+    {
+      name: `school`,
+      message: `Please insert the name of your school.`,
+      type: `input`,
+      when: (answers) => {
+        if (answers.role === `Intern`) {
+          return true;
+        }
+      }
+    },
 
-//         {
-//         name: `school`,
-//         message: `Please insert the name of your school.`,
-//         type: `input`,
-//         },
+    // If Manager is selected ask for Office Number
+
+    {
+      name: `officeNumber`,
+      message: `Please insert your office number.`,
+      type: `input`,
+      when: (answers) => {
+        if (answers.role === `Manager`) {
+          return true;
+        }
+      }
+    },
+
+
+  ];
+;
+;
+
 
 // If Manager is selected ask for Office Number
 
@@ -90,7 +100,9 @@ const query = async () => {
 
 // Function to initialize app
 function init() {
-  inquirer.prompt(query).then((answers) =>
+  inquirer
+  .prompt(questions)
+  .then((answers) =>
     fs.writeFile(`myteam.html`, generateHTML(answers), (error) => {
       return error
         ? console.error(error)
