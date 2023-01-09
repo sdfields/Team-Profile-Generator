@@ -12,71 +12,80 @@ const Manager = require("./lib/Manager");
 
 // Empty Array for Team
 
-const teamMembers = [];
+const teamMembersData = [];
 
 // Array of questions for user input
 
-const teamInfo = [
+const memberInfoQuery = [
     {
-        name: `Name`,
+        name: `name`,
         message: `Please insert your name.`,
         type: `input`,
     },
     {
-        name: `ID`,
+        name: `id`,
         message: `Please insert your ID.`,
         type: `input`,
     },
     {
-        name: `Email`,
+        name: `email`,
         message: `Please insert your email.`,
         type: `input`,
     },
     {
-        name: `Role`,
+        name: `role`,
         message: `Please select your role.`,
-        type: `checkbox`,
+        type: `list`,
         choices: [`Engineer`, `Intern`, `Manager`]
     },
     {
-        name: `GitHub`,
-        message: `Please insert your GitHub.`,
-        type: `input`,
-    },
-    {
-        name: `School`,
+        name: `school`,
         message: `Please insert the name of your school.`,
         type: `input`,
     },
     {
-        name: `Office Number`,
+        name: `officeNumber`,
         message: `Please insert your office number.`,
         type: `input`,
     },
 ];
 
+    // If Engineer is selected ask for GitHub
+        if(answers.role === Engineer) {
+            const managerQ = await inquirer
+            .prompt([
+                {
+                    name: `gitHub`,
+                    message: `Please insert your GitHub.`,
+                    type: `input`,
+                },
+            ])
+        }
+
+    // If Intern is selected ask for school
+
+
+    // If Manager is selected ask for Office Number
 
 
 
 
-
-
-// function generateHTML(answers) {
+// function generateHTML(answers)
     
 // }
 
 // Function to initialize app
-// function init() {
-//     inquirer
-//     .prompt(subjectInfo)
-//     .then((answers) =>
-//       fs.writeFile(`myteam.html`, generateHTML(answers), (error) => {
-//            return error 
-//           ? console.error(error)
-//           : console.log(`Team Profile uploaded successfully!`)
-//       })
-//     );
-// }
+function init() {
+    inquirer
+    .prompt(memberInfoQuery)
+    .then((answers) =>
+      fs.writeFile(`myteam.html`, generateHTML(answers), (error) => {
+           return error 
+          ? console.error(error)
+          : console.log(`Team Profile uploaded successfully!`)
+      })
+    );
+};
 
-// Function call to initialize app
-// init();
+// Call
+init();
