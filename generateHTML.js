@@ -7,7 +7,7 @@ function engineerCard(engineer) {
             <ul>
                 <li>ID: ${engineer.id}</li>
                 <li>Email: <a href="mailto:${engineer.email}" target="_blank"> ${engineer.email}</a></li>
-                <li>GitHub: <a href="https://www.github.com/${engineer.github}" target=_blank"> ${engineer.github}</a></li>
+                <li>GitHub: <a href="https://www.github.com/${engineer.github}" target="_blank"> ${engineer.github}</a></li>
             </ul>
         </div>
     </div>
