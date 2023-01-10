@@ -19,8 +19,8 @@ const teamMembersData = [];
 
 console.log("Hello, please insert the information as you are prompted.");
 
-function init() {
-const questions = [
+function queryMenu() {
+  const questions = [
   {
     name: 'name',
     message: 'Please insert your name.',
@@ -82,6 +82,9 @@ const questions = [
   },
 ];
 };
+
+queryMenu();
+
 // Question Loop that allows them to add more members
 
 function getAnswers() {
