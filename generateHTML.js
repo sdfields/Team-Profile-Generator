@@ -1,3 +1,5 @@
+// Creates an engineer card with basic HTML and info from teamMembersData array
+
 function engineerCard(engineer) {
   return `
 <div class="row">
@@ -15,6 +17,8 @@ function engineerCard(engineer) {
 `
 }
 
+// Creates an intern card with basic HTML and info from teamMembersData array
+
 function internCard(intern) {
   return `
   <div class="row">
@@ -30,6 +34,9 @@ function internCard(intern) {
       </div>
   </div> `
 }
+
+// Creates a manager card with basic HTML and info from teamMembersData array
+
 function managerCard(manager) {
     return `
       <div class="row">
@@ -45,6 +52,9 @@ function managerCard(manager) {
           </div>
       </div> `
 }
+
+// Renders the cards
+
 const generateHTML = (data) => {
   let teamArray = [];
 
@@ -72,6 +82,8 @@ const generateHTML = (data) => {
 
   return renderedPage;
 };
+
+// Basic HTML body to use as a template
 
 function skeletonHTML(allCards) {
   return `<!DOCTYPE html>
