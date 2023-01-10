@@ -64,7 +64,7 @@ function addEngineer() {
         type: "input",
       },
       {
-        name: "newMember",
+        name: "newmember",
         message: "Would you like to add another member?",
         type: "confirm",
       },
@@ -78,7 +78,7 @@ function addEngineer() {
         answers.github,
       );
       teamMembersData.push(engineer);
-      if (answers.newMember) {
+      if (answers.newmember) {
         return queryMenu();
       } else return buildTeam();
     });
@@ -107,7 +107,7 @@ function addIntern() {
       type: "input",
     },
     {
-      name: "newMember",
+      name: "newmember",
       message: "Would you like to add another member?",
       type: "confirm",
     },
@@ -120,7 +120,7 @@ function addIntern() {
       answers.school,
     );
     teamMembersData.push(intern);
-    if (answers.newMember) {
+    if (answers.newmember) {
       return queryMenu();
     } else return buildTeam();
   });;
@@ -149,7 +149,7 @@ function addManager() {
       type: "input",
     },
     {
-      name: "newMember",
+      name: "newmember",
       message: "Would you like to add another member?",
       type: "confirm",
     },
@@ -162,15 +162,25 @@ function addManager() {
       answers.officenumber,
     );
     teamMembersData.push(manager);
-    if (answers.newMember) {
+    if (answers.newmember) {
       return queryMenu();
     } else return buildTeam();
   });
 }
 
 function buildTeam() {
-  console.log(teamMembersData);
-
+  inquirer.prompt([
+    {
+    name: 'filename',
+    message: 'What would you like to name your file?',
+    type: 'input',
+    },
+  ])
+  .then((data) => {
+    const fileName = `./dist/${data.filename}.html`
+    fs.writeFile(fileName, generateHTML(teamMembersData), (err) =>
+    err? console.log(err) : console.log("Your team page has been stored successfully!"))
+  });
 }
 
 queryMenu();
