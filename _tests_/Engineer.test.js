@@ -9,7 +9,7 @@ test("Testing if the correct values are received for Engineer class object.", fu
     expect(testEngineer.name).toBe("Joe");
     expect(testEngineer.id).toBe("123");
     expect(testEngineer.email).toBe("Joe@gmail.com");
-    expect(testEngineer.gitHub).toBe("github.com/Joe");
+    expect(testEngineer.github).toBe("github.com/Joe");
 });
 
 // Testing Engineer Functions

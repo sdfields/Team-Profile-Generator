@@ -9,7 +9,7 @@ test("Testing if the correct values are received for Manager class object.", fun
     expect(testManager.name).toBe("Joe");
     expect(testManager.id).toBe("123");
     expect(testManager.email).toBe("Joe@gmail.com");
-    expect(testManager.officeNumber).toBe("007");
+    expect(testManager.officenumber).toBe("007");
 });
 
 // Testing Manager Functions
