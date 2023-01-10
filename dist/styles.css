@@ -1,8 +1,50 @@
-h1 {
-    background-color: red;
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: salmon;
     color: white;
     display: flex;
+    font-size: 10em;
     justify-content: center;
-    margin: 10px;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 3%;
 };
+
+body {
+    display: flex;
+    flex-wrap:wrap;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+}
+
+.row {
+    margin: 0 -5px;
+}
+
+.card {
+    background: white;
+    border: 5px solid black;
+    border-radius: 5px;
+    height: 300px;
+    margin: 10px;
+}
+
+.card-header {
+    background-color: cyan;
+    color: white;
+    display: flex;
+    font-size: 3em;
+    justify-content: start;
+    margin: 0;
+}
+
+li {
+    font-size: 2em;
+}
