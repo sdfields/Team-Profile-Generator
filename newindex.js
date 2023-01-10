@@ -70,7 +70,6 @@ function addEngineer() {
       },
     ])
     .then((answers) => {
-      console.log(answers);
       const engineer = new Engineer(
         answers.name,
         answers.id,
@@ -112,7 +111,6 @@ function addIntern() {
       type: "confirm",
     },
   ])    .then((answers) => {
-    console.log(answers);
     const intern = new Intern(
       answers.name,
       answers.id,
@@ -154,7 +152,6 @@ function addManager() {
       type: "confirm",
     },
   ])    .then((answers) => {
-    console.log(answers);
     const manager = new Manager(
       answers.name,
       answers.id,
