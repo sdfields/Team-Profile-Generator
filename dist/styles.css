@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* Adjusts the styling for the header/title */
+
 header {
     background-color: salmon;
     color: white;
@@ -13,12 +15,22 @@ header {
     text-align: center;
 };
 
+/* Adjusts the styling for the body of the webpage */
+
 body {
     display: flex;
     flex-wrap: wrap;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+
+/* Adjusts the styling for the horizontal row containers for the cards */
+
+.row {
+    margin: 0 -5px;
+}
+
+/* Adjusts the styling for the vertical column containers for the cards */
 
 .column {
     display: flex;  
@@ -27,9 +39,7 @@ body {
     width: 33%;
 }
 
-.row {
-    margin: 0 -5px;
-}
+/* Adjusts the styling for the cards themselves */
 
 .card {
     background: white;
@@ -40,6 +50,8 @@ body {
     margin: 10px;
 }
 
+/* Adjusts the styling for the headers of the cards */
+
 .card-header {
     background-color: rgb(57, 57, 224);
     color: white;
@@ -48,6 +60,8 @@ body {
     justify-content: start;
     margin: 0;
 }
+
+/* Adjusts the styling for the list items */
 
 li {
     font-size: 2em;
