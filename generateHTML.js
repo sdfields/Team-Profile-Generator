@@ -96,10 +96,8 @@ function skeletonHTML(allCards) {
         <title>My Team</title>
     </head>
         <body>
-        <header>My Team</header>
-        <div>
-        ${allCards}
-        </div>
+          <header>My Team</header>
+            ${allCards}
         </body>
     </html>`
 };

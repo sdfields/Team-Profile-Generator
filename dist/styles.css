@@ -15,15 +15,16 @@ header {
 
 body {
     display: flex;
-    flex-wrap:wrap;
-    font-family: 'Times New Roman', Times, serif;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 .column {
     display: flex;  
     float: left;
+    justify-content: center;
     width: 33%;
-    padding: 0 10px;
 }
 
 .row {
@@ -34,13 +35,13 @@ body {
     background: white;
     border: 5px solid black;
     border-radius: 5px;
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 80%;
     margin: 10px;
 }
 
 .card-header {
-    background-color: cyan;
+    background-color: rgb(57, 57, 224);
     color: white;
     display: flex;
     font-size: 3em;
