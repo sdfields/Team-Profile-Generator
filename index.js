@@ -78,7 +78,7 @@ function addEngineer() {
         answers.name,
         answers.id,
         answers.email,
-        answers.github,
+        answers.github
       );
       teamMembersData.push(engineer);
       if (answers.newmember) {
@@ -89,107 +89,113 @@ function addEngineer() {
 
 // Function called above to add an intern to teamMembersData array and loop back to queryMenu if user wants to add another member
 
-
 function addIntern() {
-  return inquirer.prompt([
-    {
-      name: "name",
-      message: "Please insert your name.",
-      type: "input",
-    },
-    {
-      name: "id",
-      message: "Please insert your ID.",
-      type: "input",
-    },
-    {
-      name: "email",
-      message: "Please insert your email.",
-      type: "input",
-    },
-    {
-      name: "school",
-      message: "Please insert the name of your school.",
-      type: "input",
-    },
-    {
-      name: "newmember",
-      message: "Would you like to add another member?",
-      type: "confirm",
-    },
-  ])    .then((answers) => {
-    const intern = new Intern(
-      answers.name,
-      answers.id,
-      answers.email,
-      answers.school,
-    );
-    teamMembersData.push(intern);
-    if (answers.newmember) {
-      return queryMenu();
-    } else return buildTeam();
-  });;
+  return inquirer
+    .prompt([
+      {
+        name: "name",
+        message: "Please insert your name.",
+        type: "input",
+      },
+      {
+        name: "id",
+        message: "Please insert your ID.",
+        type: "input",
+      },
+      {
+        name: "email",
+        message: "Please insert your email.",
+        type: "input",
+      },
+      {
+        name: "school",
+        message: "Please insert the name of your school.",
+        type: "input",
+      },
+      {
+        name: "newmember",
+        message: "Would you like to add another member?",
+        type: "confirm",
+      },
+    ])
+    .then((answers) => {
+      const intern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.school
+      );
+      teamMembersData.push(intern);
+      if (answers.newmember) {
+        return queryMenu();
+      } else return buildTeam();
+    });
 }
 
 // Function called above to add a manager to teamMembersData array and loop back to queryMenu if user wants to add another member
 
-
 function addManager() {
-  return inquirer.prompt([
-    {
-      name: "name",
-      message: "Please insert your name.",
-      type: "input",
-    },
-    {
-      name: "id",
-      message: "Please insert your ID.",
-      type: "input",
-    },
-    {
-      name: "email",
-      message: "Please insert your email.",
-      type: "input",
-    },
-    {
-      name: "officenumber",
-      message: "Please insert your office number.",
-      type: "input",
-    },
-    {
-      name: "newmember",
-      message: "Would you like to add another member?",
-      type: "confirm",
-    },
-  ])    .then((answers) => {
-    const manager = new Manager(
-      answers.name,
-      answers.id,
-      answers.email,
-      answers.officenumber,
-    );
-    teamMembersData.push(manager);
-    if (answers.newmember) {
-      return queryMenu();
-    } else return buildTeam();
-  });
+  return inquirer
+    .prompt([
+      {
+        name: "name",
+        message: "Please insert your name.",
+        type: "input",
+      },
+      {
+        name: "id",
+        message: "Please insert your ID.",
+        type: "input",
+      },
+      {
+        name: "email",
+        message: "Please insert your email.",
+        type: "input",
+      },
+      {
+        name: "officenumber",
+        message: "Please insert your office number.",
+        type: "input",
+      },
+      {
+        name: "newmember",
+        message: "Would you like to add another member?",
+        type: "confirm",
+      },
+    ])
+    .then((answers) => {
+      const manager = new Manager(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.officenumber
+      );
+      teamMembersData.push(manager);
+      if (answers.newmember) {
+        return queryMenu();
+      } else return buildTeam();
+    });
 }
 
 // Function that writes the file based on the info logged in the teamMembersData array and inputs it into the template from generateHTML.js
 
 function buildTeam() {
-  inquirer.prompt([
-    {
-    name: 'filename',
-    message: 'What would you like to name your file?',
-    type: 'input',
-    },
-  ])
-  .then((data) => {
-    const fileName = `./dist/${data.filename}.html`
-    fs.writeFile(fileName, generateHTML(teamMembersData), (err) =>
-    err? console.log(err) : console.log("Your team page has been stored successfully!"))
-  });
+  inquirer
+    .prompt([
+      {
+        name: "filename",
+        message: "What would you like to name your file?",
+        type: "input",
+      },
+    ])
+    .then((data) => {
+      const fileName = `./dist/${data.filename}.html`;
+      fs.writeFile(fileName, generateHTML(teamMembersData), (err) =>
+        err
+          ? console.log(err)
+          : console.log("Your team page has been stored successfully!")
+      );
+    });
 }
 
 // Calling the main function that accesses the others

@@ -14,7 +14,7 @@ function engineerCard(engineer) {
         </div>
     </div>
 </div> 
-`
+`;
 }
 
 // Creates an intern card with basic HTML and info from teamMembersData array
@@ -32,13 +32,13 @@ function internCard(intern) {
               </ul>
           </div>
       </div>
-  </div> `
+  </div> `;
 }
 
 // Creates a manager card with basic HTML and info from teamMembersData array
 
 function managerCard(manager) {
-    return `
+  return `
       <div class="row">
           <div class="column">
               <div class="card">
@@ -50,7 +50,7 @@ function managerCard(manager) {
                   </ul>
               </div>
           </div>
-      </div> `
+      </div> `;
 }
 
 // Renders the cards
@@ -77,7 +77,7 @@ const generateHTML = (data) => {
     }
   }
 
-  const allCards = teamArray.join('');
+  const allCards = teamArray.join("");
   const renderedPage = skeletonHTML(allCards);
 
   return renderedPage;
@@ -99,7 +99,7 @@ function skeletonHTML(allCards) {
           <header>My Team</header>
             ${allCards}
         </body>
-    </html>`
-};
+    </html>`;
+}
 
 module.exports = generateHTML;
