@@ -28,3 +28,4 @@ Tests are located in the "_tests_" folder and can be run by typing "npm test" in
 https://github.com/sdfields/Team-Profile-Generator
 
 # Example Video
+https://drive.google.com/file/d/1TTOXGh9c8Uztc5gIf9Bgb_M8fnoF7K-j/view
